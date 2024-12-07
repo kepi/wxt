@@ -240,6 +240,7 @@ describe('TypeScript Project', () => {
       /// <reference types="./types/i18n.d.ts" />
       /// <reference types="./types/globals.d.ts" />
       /// <reference types="./types/imports.d.ts" />
+      /// <reference types="./types/imports-module.d.ts" />
       "
     `);
   });
@@ -266,7 +267,6 @@ describe('TypeScript Project', () => {
           "strict": true,
           "skipLibCheck": true,
           "paths": {
-            "#imports": ["./imports.ts"],
             "@": [".."],
             "@/*": ["../*"],
             "~": [".."],
@@ -311,7 +311,6 @@ describe('TypeScript Project', () => {
           "strict": true,
           "skipLibCheck": true,
           "paths": {
-            "#imports": ["./imports.ts"],
             "@": ["../src"],
             "@/*": ["../src/*"],
             "~": ["../src"],
@@ -360,7 +359,6 @@ describe('TypeScript Project', () => {
           "strict": true,
           "skipLibCheck": true,
           "paths": {
-            "#imports": ["./imports.ts"],
             "example": ["../example"],
             "example/*": ["../example/*"],
             "@": ["../src"],
