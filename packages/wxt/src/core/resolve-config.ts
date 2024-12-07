@@ -348,7 +348,6 @@ async function getUnimportOptions(
   const eslintrc = await getUnimportEslintOptions(wxtDir, config.imports);
   const defaultOptions: WxtResolvedUnimportOptions = {
     // prettier-ignore
-    // #region snippet
     imports: [
       { name: 'defineConfig',         from: 'wxt' },
       // wxt/client
@@ -376,7 +375,6 @@ async function getUnimportOptions(
       },
       { package: 'wxt/storage' },
     ],
-    // #endregion snippet
     virtualImports: ['#imports'],
     debugLog: logger.debug,
     warn: logger.warn,
