@@ -1319,7 +1319,7 @@ export interface ResolvedConfig {
   manifestVersion: TargetManifestVersion;
   env: ConfigEnv;
   logger: Logger;
-  imports: false | WxtResolvedUnimportOptions;
+  imports: WxtResolvedUnimportOptions;
   manifest: UserManifest;
   fsCache: FsCache;
   runnerConfig: C12ResolvedConfig<ExtensionRunnerConfig>;
@@ -1467,6 +1467,8 @@ export type WxtUnimportOptions = Partial<UnimportOptions> & {
 };
 
 export type WxtResolvedUnimportOptions = Partial<UnimportOptions> & {
+  /** Set to `true` when the user disabled auto-imports. We still use unimport for the #imports module, but other features should be disabled. */
+  disabledByUser?: boolean;
   eslintrc: ResolvedEslintrc;
 };
 
