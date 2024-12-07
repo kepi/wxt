@@ -350,6 +350,7 @@ async function getUnimportOptions(
   const defaultOptions: WxtResolvedUnimportOptions = {
     debugLog: logger.debug,
     // prettier-ignore
+    // #region snippet
     imports: [
       { name: 'defineConfig',         from: 'wxt' },
       // wxt/client
@@ -370,6 +371,7 @@ async function getUnimportOptions(
       // wxt/testing
       { name: 'fakeBrowser',          from: 'wxt/testing' },
     ],
+    // #endregion snippet
     virtualImports: ['#imports'],
     presets: [
       {

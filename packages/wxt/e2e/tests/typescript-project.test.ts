@@ -266,6 +266,7 @@ describe('TypeScript Project', () => {
           "strict": true,
           "skipLibCheck": true,
           "paths": {
+            "#imports": ["./imports.ts"],
             "@": [".."],
             "@/*": ["../*"],
             "~": [".."],
@@ -310,6 +311,7 @@ describe('TypeScript Project', () => {
           "strict": true,
           "skipLibCheck": true,
           "paths": {
+            "#imports": ["./imports.ts"],
             "@": ["../src"],
             "@/*": ["../src/*"],
             "~": ["../src"],
@@ -358,6 +360,7 @@ describe('TypeScript Project', () => {
           "strict": true,
           "skipLibCheck": true,
           "paths": {
+            "#imports": ["./imports.ts"],
             "example": ["../example"],
             "example/*": ["../example/*"],
             "@": ["../src"],
