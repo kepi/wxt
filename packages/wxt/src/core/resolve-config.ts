@@ -339,14 +339,14 @@ function resolveAnalysisConfig(
   };
 }
 
-export async function getUnimportOptions(
+async function getUnimportOptions(
   wxtDir: string,
   srcDir: string,
   logger: Logger,
   extensionApi: ResolvedConfig['extensionApi'],
   config: InlineConfig,
 ): Promise<WxtResolvedUnimportOptions> {
-  const disabledByUser = config.imports === false;
+  const disabled = config.imports === false;
   const eslintrc = await getUnimportEslintOptions(wxtDir, config.imports);
   const defaultOptions: WxtResolvedUnimportOptions = {
     // prettier-ignore
@@ -389,7 +389,7 @@ export async function getUnimportOptions(
     },
     eslintrc,
     dirs: ['components', 'composables', 'hooks', 'utils'],
-    disabledByUser,
+    disabled,
   };
 
   return defu<WxtResolvedUnimportOptions, [WxtResolvedUnimportOptions]>(
@@ -424,7 +424,7 @@ async function getUnimportEslintOptions(
   }
 
   return {
-    enabled: enabled,
+    enabled,
     filePath: path.resolve(
       wxtDir,
       enabled === 9 ? 'eslint-auto-imports.mjs' : 'eslintrc-auto-import.json',
